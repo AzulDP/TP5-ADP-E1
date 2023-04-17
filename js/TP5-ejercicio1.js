@@ -37,11 +37,3 @@ function send() {
         }
         }
     
-//     let check = magicNumber === userGuess; 
-//     if ((check)? "Adivinaste!" : "No adivinaste!"){ 
-//         alert(`${check}`);
-//     } else if (magicNumber < userGuess) {
-//         alert(`Tu número ${userGuess} era meor que el número mágico ${magicNumber}`);
-//     } else if (magicNumber > userGuess){
-//         alert(`Tu número ${userGuess} era mayor que el número mágico ${magicNumber}`);
-//     } else if (magicNumber === userGuess) {
