@@ -7,8 +7,8 @@ let botonComenzar = document.getElementById("start");
 let formulario = document.querySelector("form");
 let magicNumber = [];
 let userGuess = [];
-let displayResult = document.getElementById("displayResult");
-let adivino = (magicNumber === userGuess) ? "Adivinaste!" : "No adivinaste!"; 
+let check;
+let displayResult = document.getElementById("displayResult"); 
 console.log(formulario);
 
 formulario.addEventListener("submit", send());
@@ -25,15 +25,22 @@ function start() {
     
 // }
 
+function checkGuess(){
+    let check = (magicNumber === userGuess) ? "Adivinaste!" : "No adivinaste!";
+    console.log(check);
+    
+    let guessHigher = (magicNumber < userGuess) ? `Tu número ${userGuess} era mayor que el número mágico ${magicNumber}` : `Tu número ${userGuess} era menor que el número mágico ${magicNumber}`;
+    console.log(guessHigher);
+}
 function send() {
     let userGuess = parseInt(document.getElementById("userGuess").value);
     console.log(userGuess);
-    if (adivino){ 
-    alert(`${adivino}`);
-    } else if (magicNumber < userGuess) {
-        alert(`Tu número ${userGuess} era mayor que el número mágico ${magicNumber}`);
-    } else if (magicNumber > userGuess){
-        alert(`Tu número ${userGuess} era menor que el número mágico ${magicNumber}`);
+    if (checkGuess()){ 
+        alert(`${check}`);
+    } else if (guessHigher()) {
+    //     alert(`Tu número ${userGuess} era mayor que el número mágico ${magicNumber}`);
+    // } else if (magicNumber > userGuess){
+    //     alert(`Tu número ${userGuess} era menor que el número mágico ${magicNumber}`);
     } else if (magicNumber === userGuess) {
     document.getElementById("result").innerHTML(`🔮¡Si lo eres!🔮 <br> Tu número era ${userGuess} y el número mágico era ${magicNumber}`);
 }
