@@ -34,23 +34,29 @@
         </nav>
     </header>
     <main class="container-fluid">
-        <h1 class="bg-primary text-center text-white py-4">Adivina adivinador</h1>
-       <section class="text-center py-4">
-           <p>🔮¿Quieres saber si eres el Nostradamus moderno?🔮</p>
-           <button type="button" class="btn btn-dark" onclick="start()">Comenzar juego</button>
-        </section> 
-        <section class="container-fluid text-center my-4">
-            <form class="d-flex my-4" role="button">
+        <section class="container my-2">
+            <h1 class="bg-primary text-center text-white py-4">Adivina adivinador</h1>
+            <article class="text-center py-4">
+                <p>🔮¿Quieres saber si eres el Nostradamus moderno?🔮</p>
+                <button type="submit" class="btn btn-dark" onclick="start()">Comenzar juego</button>
+        </article> 
+        <article class="container-fluid text-center my-4 row">
+            <p class="bg-dark text-light">Elegí un número del 0-100 a ver si adivinas el número que eligió la computadora</p>
+            <form class="d-flex my-4 container justify-content-center col-6" role="button">
                 <input 
                 type="search"
                 class="form-control me-2"
                 placeholder="Ingrese un numero"
                 aria-label="input"
                 required>
-                <button type="button" class="btn btn-primary" onclick="send()">Enviar</button>
+                <button type="submit" class="btn btn-primary col-6" onclick="numeroAdivinado()">Enviar</button>
             </form>
-        </section>
-
+        </article>
+        <article class="col-8 bg-dark text-light">
+<p class="bg-guessed" id="displayResult"></p>
+        </article>
+    </section>
+        
     </main>
     <footer class="bg-dark text-secondary text-center py-4">
         <p>&copy; Todos los derechos reservados.</p>
