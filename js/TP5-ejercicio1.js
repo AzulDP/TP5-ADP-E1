@@ -8,7 +8,7 @@ let formulario = document.querySelector("form");
 let magicNumber = [];
 let userGuess = [];
 let check;
-let displayResult = document.getElementById("displayResult"); 
+let result = document.getElementById("result"); 
 console.log(formulario);
 
 formulario.addEventListener("submit", send());
@@ -19,24 +19,21 @@ function start() {
     console.log(magicNumber);
 }
 
-    
-function checkGuess(){
-    let check = (magicNumber === userGuess) ? "Adivinaste!" : "No adivinaste!";
-    console.log(check);
-    
-    let guessHigher = (magicNumber < userGuess) ? `Tu número ${userGuess} era mayor que el número mágico ${magicNumber}` : `Tu número ${userGuess} era menor que el número mágico ${magicNumber}`;
-    console.log(guessHigher);
-}
+
 function send() {
     let userGuess = parseInt(document.getElementById("userGuess").value);
     console.log(userGuess);
-    if (checkGuess()){ 
-        alert(`${check}`);
-    } else if (guessHigher()) {
-    //     alert(`Tu número ${userGuess} era mayor que el número mágico ${magicNumber}`);
-    // } else if (magicNumber > userGuess){
-    //     alert(`Tu número ${userGuess} era menor que el número mágico ${magicNumber}`);
-    } else if (magicNumber === userGuess) {
-    document.getElementById("result").innerHTML(`🔮¡Si lo eres!🔮 <br> Tu número era ${userGuess} y el número mágico era ${magicNumber}`);
-}
-}
+    let check = (userGuess === magicNumber) ? `Adivinaste!` : `No adivinaste!`;
+    console.log(check);
+    let guessHigher = (magicNumber < userGuess) ? `Tu número ${userGuess} era mayor que el número mágico ${magicNumber}` : `Tu número ${userGuess} era menor que el número mágico ${magicNumber}`;
+    console.log(guessHigher);
+
+    if (check){
+        alert(`${check}`)
+    } else if (guessHigher){
+        alert(`${guessHigher}`)
+    } else {
+        document.getElementById("result").innerHTML(`🔮¡Si lo eres!🔮 <br> Tu número era ${userGuess} y el número mágico era ${magicNumber}`);
+        }
+        }
+    
