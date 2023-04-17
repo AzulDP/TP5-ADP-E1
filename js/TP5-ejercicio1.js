@@ -20,11 +20,6 @@ function start() {
 }
 
     
-// function obtenerDato(e) {
-//     e.preventDefault();
-    
-// }
-
 function checkGuess(){
     let check = (magicNumber === userGuess) ? "Adivinaste!" : "No adivinaste!";
     console.log(check);
