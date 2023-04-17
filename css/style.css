@@ -12,4 +12,5 @@ main{
 .bg-guessed{
     background-color: purple;
     border-radius: 10px;
+    color: white;
 }
